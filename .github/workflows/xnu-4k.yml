@@ -28,16 +28,18 @@ env:
 
 jobs:
   build:
-    runs-on: macos-14
+    runs-on: macos-15
     timeout-minutes: 150
     steps:
       - uses: actions/checkout@v4
 
-      # Xcode 16.0 as on Codemagic (patch 0128 gives iig's IORPC.kernelContent)
-      - name: Xcode 16.0
+      # Xcode 16.x selection on macos-15
+      - name: Select Xcode 16
         run: |
           ls -d /Applications/Xcode*.app
-          sudo xcode-select -s /Applications/Xcode_16.0.app
+          XCODE_PATH=$(ls -d /Applications/Xcode_16*.app | head -n 1)
+          echo "Selected: $XCODE_PATH"
+          sudo xcode-select -s "$XCODE_PATH"
           xcodebuild -version
 
       - uses: actions/cache@v4
