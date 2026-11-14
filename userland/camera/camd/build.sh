@@ -7,7 +7,7 @@ set -e
 cd "$(dirname "$0")"
 SDK=${SDK:-$HOME/sdks/theos-sdks/iPhoneOS16.5.sdk}
 LDID=${LDID:-$HOME/tools-dl/ldid/ldid}
-CLANG=${CLANG:-/usr/lib/llvm-18/bin/clang}
+CLANG=${CLANG:-/usr/bin/clang}
 LIB="../util.c ../stage.c ../rawio.c ../remosaic.c ../demosaic.c ../color.c ../out.c ../jpeg.c"
 OWN="preview.c develop.c exif.c"
 WARN="-Wall -Wextra -Wno-unused-parameter -Wno-missing-field-initializers"

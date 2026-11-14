@@ -44,7 +44,7 @@ while [[ ${1:-} == --* ]]; do
 	--gpu-fw)
 		shift
 		[[ -f $1/a630_sqe.fw ]] || { echo "$1/a630_sqe.fw not found" >&2; exit 1; }
-		gpufw=(--gpu-sqe "$1/a630_sqe.fw")
+		gpufw+=(--gpu-sqe "$1/a630_sqe.fw")
 		[[ -f $1/a610_zap.mdt ]] && gpufw+=(--gpu-zap-mdt "$1/a610_zap.mdt")
 		[[ -f $1/a610_zap.b02 ]] && gpufw+=(--gpu-zap-seg "$1/a610_zap.b02")
 		;;

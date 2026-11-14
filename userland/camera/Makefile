@@ -4,7 +4,7 @@
 #   make test       quick round-trip tests on the host (tests/run.sh)
 SDK   ?= $(HOME)/sdks/theos-sdks/iPhoneOS16.5.sdk
 LDID  ?= $(HOME)/tools-dl/ldid/ldid
-CLANG ?= /usr/lib/llvm-18/bin/clang
+CLANG ?= /usr/bin/clang
 
 CFLAGS_COMMON = -O3 -std=gnu11 -Wall -Wextra -Wno-unused-parameter -ffp-contract=fast -fno-math-errno
 HOST_CC     ?= $(CLANG)
